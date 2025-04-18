@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "description": "Define car model information",
+    "displayName": "Car",
+    "pluralName": "cars",
+    "singularName": "car"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "createdAt": {
+      "type": "datetime"
+    },
+    "updatedAt": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "text"
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "owner_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "cars"
+    },
+    "horsepower": {
+      "type": "integer"
+    },
+    "torque": {
+      "type": "integer"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "motor": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    }
+  }
+}

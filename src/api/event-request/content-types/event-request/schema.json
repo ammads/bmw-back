@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_requests",
+  "info": {
+    "singularName": "event-request",
+    "pluralName": "event-requests",
+    "displayName": "Event Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "requestStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Accepted",
+        "Rejected"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "carModel": {
+      "type": "string"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "event_requests"
+    }
+  }
+}

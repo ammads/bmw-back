@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "location": {
+      "type": "string"
+    },
+    "attendees": {
+      "type": "integer"
+    },
+    "maxCapacity": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "event_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-request.event-request",
+      "mappedBy": "event"
+    }
+  }
+}
